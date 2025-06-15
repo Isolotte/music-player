@@ -1,0 +1,108 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.player-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* 플레이어의 최대 너비 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#album-artwork {
+    width: 100%;
+    max-width: 300px; /* 앨범 아트 최대 너비 */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track-info {
+    margin-bottom: 15px;
+    width: 100%; /* 제목/아티스트가 길어도 영역 확보 */
+    text-align: center; /* 제목/아티스트 중앙 정렬 */
+}
+
+#track-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: nowrap; /* 넘쳐도 줄바꿈 안함 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis; /* 넘치면 ... 표시 */
+    padding: 0 10px; /* 좌우 패딩 */
+}
+
+#track-artist {
+    font-size: 0.9em;
+    color: #555;
+     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+     padding: 0 10px; /* 좌우 패딩 */
+}
+
+#play-pause-btn {
+    background-color: #ff5500; /* Soundcloud 오렌지색 */
+    color: white;
+    border: none;
+    border-radius: 50%; /* 동그란 버튼 */
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    display: flex; /* 아이콘 중앙 정렬 */
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* 패딩 제거 */
+}
+
+#play-pause-btn:hover:not(:disabled) { /* 비활성화 상태일 때는 호버 효과 없음 */
+    background-color: #e64d00;
+}
+
+ #play-pause-btn:disabled {
+    background-color: #ccc; /* 비활성화 시 회색 */
+    cursor: not-allowed;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4个体;
+    cursor: pointer;
+    margin-bottom: 10px;
+    overflow: hidden; /* 진행 바가 넘치지 않도록 */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%; /* JavaScript에서 조절 */
+    background-color: #ff5500; /* Soundcloud 오렌지색 */
+    border-radius: 4px;
+    /* transition: width 0.1s linear; */ /* JSBin에서는 부드러운 전환이 느릴 수 있어 주석 처리 */
+}
